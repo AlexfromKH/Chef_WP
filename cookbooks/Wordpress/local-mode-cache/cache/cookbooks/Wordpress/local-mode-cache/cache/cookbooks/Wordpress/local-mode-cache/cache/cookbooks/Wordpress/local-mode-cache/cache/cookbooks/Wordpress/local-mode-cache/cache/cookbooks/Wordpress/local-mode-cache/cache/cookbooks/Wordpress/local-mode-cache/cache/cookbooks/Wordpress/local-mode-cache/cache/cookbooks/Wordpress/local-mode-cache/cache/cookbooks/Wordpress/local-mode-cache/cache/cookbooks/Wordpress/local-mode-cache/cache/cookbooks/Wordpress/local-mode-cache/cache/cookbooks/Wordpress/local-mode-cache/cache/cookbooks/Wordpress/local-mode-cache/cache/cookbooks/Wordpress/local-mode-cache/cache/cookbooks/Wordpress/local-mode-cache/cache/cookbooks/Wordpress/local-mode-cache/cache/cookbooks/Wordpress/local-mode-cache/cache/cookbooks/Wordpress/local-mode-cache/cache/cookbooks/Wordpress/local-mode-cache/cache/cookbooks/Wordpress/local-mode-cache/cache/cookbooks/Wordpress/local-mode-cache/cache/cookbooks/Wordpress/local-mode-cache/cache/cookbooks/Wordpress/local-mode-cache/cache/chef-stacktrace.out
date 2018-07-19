@@ -1,0 +1,126 @@
+Generated at 2018-07-17 22:42:48 +0200
+Mixlib::ShellOut::ShellCommandFailed: execute[update] (Wordpress::update line 6) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '100'
+---- Begin output of apt-get update && apt-get -y upgrade ----
+STDOUT: Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+Hit:2 http://us.archive.ubuntu.com/ubuntu bionic InRelease
+Get:3 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [37.1 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:5 http://security.ubuntu.com/ubuntu bionic-security/universe i386 Packages [37.1 kB]
+Ign:6 http://apt.puppetlabs.com bionic InRelease
+Ign:7 http://apt.puppetlabs.com trusty InRelease
+Hit:8 http://apt.puppetlabs.com bionic Release
+Hit:9 http://apt.puppetlabs.com trusty Release
+Get:12 http://us.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu bionic-updates/main i386 Packages [186 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [204 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu bionic-updates/universe i386 Packages [129 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [129 kB]
+Fetched 968 kB in 2s (549 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ apt-utils : Depends: apt (= 1.6.1) but 1.6.2 is installed
+STDERR: E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+---- End output of apt-get update && apt-get -y upgrade ----
+Ran apt-get update && apt-get -y upgrade returned 100
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/mixlib-shellout-2.3.2/lib/mixlib/shellout.rb:293:in `invalid!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/mixlib-shellout-2.3.2/lib/mixlib/shellout.rb:280:in `error!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/mixin/shell_out.rb:124:in `shell_out!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/provider/execute.rb:58:in `block in action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/mixin/why_run.rb:51:in `add_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/provider.rb:227:in `converge_by'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/provider/execute.rb:56:in `action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/provider.rb:182:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource.rb:577:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:70:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:98:in `block (2 levels) in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:98:in `each'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:98:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/resource_list.rb:94:in `block in execute_each_resource'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/stepable_iterator.rb:114:in `call_iterator_block'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/stepable_iterator.rb:85:in `step'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/stepable_iterator.rb:103:in `iterate'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/resource_list.rb:92:in `execute_each_resource'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:97:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:717:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:712:in `catch'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:712:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:751:in `converge_and_save'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:283:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application.rb:303:in `run_with_graceful_exit_option'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application.rb:279:in `block in run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/local_mode.rb:44:in `with_server_connectivity'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application.rb:261:in `run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application/client.rb:441:in `run_application'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application.rb:66:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application/solo.rb:224:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/bin/chef-solo:25:in `<top (required)>'
+/usr/bin/chef-solo:272:in `load'
+/usr/bin/chef-solo:272:in `<main>'
+
+>>>> Caused by Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '100'
+---- Begin output of apt-get update && apt-get -y upgrade ----
+STDOUT: Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+Hit:2 http://us.archive.ubuntu.com/ubuntu bionic InRelease
+Get:3 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [37.1 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:5 http://security.ubuntu.com/ubuntu bionic-security/universe i386 Packages [37.1 kB]
+Ign:6 http://apt.puppetlabs.com bionic InRelease
+Ign:7 http://apt.puppetlabs.com trusty InRelease
+Hit:8 http://apt.puppetlabs.com bionic Release
+Hit:9 http://apt.puppetlabs.com trusty Release
+Get:12 http://us.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu bionic-updates/main i386 Packages [186 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [204 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu bionic-updates/universe i386 Packages [129 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [129 kB]
+Fetched 968 kB in 2s (549 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ apt-utils : Depends: apt (= 1.6.1) but 1.6.2 is installed
+STDERR: E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+---- End output of apt-get update && apt-get -y upgrade ----
+Ran apt-get update && apt-get -y upgrade returned 100
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/mixlib-shellout-2.3.2/lib/mixlib/shellout.rb:293:in `invalid!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/mixlib-shellout-2.3.2/lib/mixlib/shellout.rb:280:in `error!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/mixin/shell_out.rb:124:in `shell_out!'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/provider/execute.rb:58:in `block in action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/mixin/why_run.rb:51:in `add_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/provider.rb:227:in `converge_by'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/provider/execute.rb:56:in `action_run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/provider.rb:182:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource.rb:577:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:70:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:98:in `block (2 levels) in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:98:in `each'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:98:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/resource_list.rb:94:in `block in execute_each_resource'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/stepable_iterator.rb:114:in `call_iterator_block'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/stepable_iterator.rb:85:in `step'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/stepable_iterator.rb:103:in `iterate'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/stepable_iterator.rb:55:in `each_with_index'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/resource_collection/resource_list.rb:92:in `execute_each_resource'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/runner.rb:97:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:717:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:712:in `catch'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:712:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:751:in `converge_and_save'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/client.rb:283:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application.rb:303:in `run_with_graceful_exit_option'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application.rb:279:in `block in run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/local_mode.rb:44:in `with_server_connectivity'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application.rb:261:in `run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application/client.rb:441:in `run_application'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application.rb:66:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/lib/chef/application/solo.rb:224:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/chef-14.2.0/bin/chef-solo:25:in `<top (required)>'
+/usr/bin/chef-solo:272:in `load'
+/usr/bin/chef-solo:272:in `<main>'

@@ -1,0 +1,7 @@
+{
+  "run_list": [
+    "recipe[Wordpress::default]",
+    "recipe[Wordpress::php]",
+    "recipe[Wordpress::database]"
+  ]
+}
